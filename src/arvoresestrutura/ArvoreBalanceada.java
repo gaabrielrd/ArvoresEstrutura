@@ -76,13 +76,13 @@ public class ArvoreBalanceada {
         } else {
             if (r.getFB() > 0) {
                 if (r.getDireita().getFB() > 0) {
-                    //  giraesq
+                    r = rotacaoEsquerda(p);
                 } else {
                     // giradireitaesquerda 
                 }
             } else {
                 if (r.getEsquerda().getFB() > 0) {
-                    //giradir
+                    r = rotacaoDireita(p);
                 } else {
                     //giradireitaesquerda
                 }
@@ -90,8 +90,8 @@ public class ArvoreBalanceada {
         }
         return r;
     }
-    
-    public  NodoArvore rotacaoDireita(NodoArvore p){
+
+    public NodoArvore rotacaoDireita(NodoArvore p) {
         NodoArvore q, temp;
         q = p.getEsquerda();
         temp = p.getDireita();
@@ -99,8 +99,8 @@ public class ArvoreBalanceada {
         p.setEsquerda(temp);
         return q;
     }
-    
-    public  NodoArvore rotacaoEsquerda(NodoArvore p){
+
+    public NodoArvore rotacaoEsquerda(NodoArvore p) {
         NodoArvore q, temp;
         q = p.getDireita();
         temp = p.getEsquerda();
